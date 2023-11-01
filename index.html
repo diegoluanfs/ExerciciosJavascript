@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exercícios</title>
+    <style>
+        /* Estilo para o modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        /* Estilo para o conteúdo do modal */
+        .modal-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 60%;
+            max-width: 800px;
+        }
+
+        a:hover {
+            background-color: red;
+        }
+
+        a:hover+a {
+            background-color: green;
+        }
+
+        a:hover+a+a {
+            background-color: blue;
+        }
+
+        a:hover+a+a+a {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Exercícios</h1>
+        <nav id="exercise-nav">
+            <ul>
+                <li><a href="#" data-exercise="exercise1">Exercício 1</a></li>
+                <li><a href="#" data-exercise="exercise2">Exercício 2</a></li>
+                <li><a href="#" data-exercise="exercise3">Exercício 3</a></li>
+                <li><a href="#" data-exercise="exercise4">Exercício 4</a></li>
+                <li><a href="#" data-exercise="exercise5">Exercício 5</a></li>
+                <li><a href="#" data-exercise="exercise6">Exercício 6</a></li>
+                <li><a href="#" data-exercise="exercise7">Exercício 7</a></li>
+                <li><a href="#" data-exercise="exercise8">Exercício 8</a></li>
+                <li><a href="#" data-exercise="exercise9">Exercício 9</a></li>
+                <li><a href="#" data-exercise="exercise10">Exercício 10</a></li>
+                <!-- Adicione os links para os outros exercícios -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Conteúdo dos modais -->
+    <div id="exercise1-modal" class="modal">
+        <div class="modal-content">
+            <h2>Exercício 1</h2>
+            <p>Crie um formulário com 4 botões que, ao clicar em cada um, altere a cor do plano de fundo da página para
+                vermelho, verde, azul e amarelo, respectivamente.</p>
+
+            <button onclick="document.body.style.backgroundColor = 'red'">Vermelho</button>
+            <button onclick="document.body.style.backgroundColor = 'green'">Verde</button>
+            <button onclick="document.body.style.backgroundColor = 'blue'">Azul</button>
+            <button onclick="document.body.style.backgroundColor = 'yellow'">Amarelo</button>
+            <button onclick="closeModal('exercise1-modal')">Fechar</button>
+        </div>
+    </div>
+
+    <div id="exercise2-modal" class="modal">
+        <div class="modal-content">
+            <h2>Exercício 2</h2>
+            <p>Crie uma página com 4 links (tag <a>), cada um representando o nome de uma cor, que, utilizando o evento
+                    onmouseover altere a cor do plano de fundo para cor correspondente.</p>
+
+            <a href="#">Vermelho</a>
+            <a href="#">Verde</a>
+            <a href="#">Azul</a>
+            <a href="#">Amarelo</a>
+            <button onclick="closeModal('exercise2-modal')">Fechar</button>
+        </div>
+    </div>
+
+    <div id="exercise3-modal" class="modal">
+        <div class="modal-content">
+            <h2>Exercício 3</h2>
+            <p>Crie uma página com uma lista (select - RadioButton) com 4 opções de cores. Ao selecionar uma opção de
+                cor, altere o plano de fundo da página para a cor específica.</p>
+
+            <select id="selectColor" onchange="changeBackgroundColor()">
+                <option value="red">Vermelho</option>
+                <option value="green">Verde</option>
+                <option value="blue">Azul</option>
+                <option value="yellow">Amarelo</option>
+            </select>
+            <button onclick="closeModal('exercise3-modal')">Fechar</button>
+        </div>
+    </div>
+
+    <div id="exercise4-modal" class="modal">
+        <div class="modal-content">
+            <h2>Exercício 4</h2>
+            <p>Crie um parágrafo (< p>) com um texto como conteúdo. Adicione um botão que, ao ser clicado, oculte ou
+                    mostre o texto do parágrafo.</p>
+
+            <p id="paragraph">Este é um texto de exemplo.</p>
+            <button onclick="toggleText()">Mostrar/Ocultar Texto</button>
+            <button onclick="closeModal('exercise4-modal')">Fechar</button>
+        </div>
+    </div>
+
+    <div id="exercise5-modal" class="modal">
+        <div class="modal-content">
+            <h2>Exercício 5</h2>
+            <p>Crie um formulário de seleção de itens com checkbox. O formulário deve possuir um botão desabilitado. O
+                botão
+                só se torna clicável quando tiver pelo menos 2 checkboxs marcado.</p>
+
+            <form>
+                <input type="checkbox" id="checkbox1" onclick="checkButton()">Item 1
+                <input type="checkbox" id="checkbox2" onclick="checkButton()">Item 2
+                <input type="checkbox" id="checkbox3" onclick="checkButton()">Item 3
+                <input type="checkbox" id="checkbox4" onclick="checkButton()">Item 4
+                <button id="submitButton" disabled>Clicável somente com 2 ou mais selecionados</button>
+            </form>
+            <button onclick="closeModal('exercise5-modal')">Fechar</button>
+        </div>
+    </div>
+
+    <div id="exercise6-modal" class="modal">
+        <div class="modal-content">
+            <h2>Exercício 6</h2>
+            <p>Crie um parágrafo com um texto como conteúdo. Crie 4 botões. Dois para trocar a cor da fonte, de branco
+                para preto e vice-versa e outros dois para fazer o mesmo com o fundo do parágrafo. Use divs se julgar
+                necessário.</p>
+
+            <p id="text" style="color: black; background-color: white;">Texto de Exemplo</p>
+            <button onclick="changeFontColor()">Trocar Cor da Fonte</button>
+            <button onclick="changeBackgroundColor()">Trocar Cor de Fundo</button>
+            <button onclick="changeFontColorBack()">Trocar de Volta Cor da Fonte</button>
+            <button onclick="changeBackgroundColorBack()">Trocar de Volta Cor de Fundo</button>
+            <button onclick="closeModal('exercise6-modal')">Fechar</button>
+        </div>
+    </div>
+
+    <div id="exercise7-modal" class="modal">
+        <div class="modal-content">
+            <h2>Exercício 7</h2>
+            <p>Crie um botão + (mais) e outro — (menos) na mesma página do exercício anterior. Esses botões aumentam e
+                diminuem o tamanho da fonte, respectivamente.</p>
+
+            <p id="text" style="font-size: 16px;">Texto de Exemplo</p>
+            <button onclick="increaseFontSize()">+</button>
+            <button onclick="decreaseFontSize()">−</button>
+            <button onclick="closeModal('exercise7-modal')">Fechar</button>
+        </div>
+    </div>
+
+    <div id="exercise8-modal" class="modal">
+        <div class="modal-content">
+            <h2>Exercício 8</h2>
+            <p>Ainda continuando no exercício 6, faça um botão que transforme todo o texto do parágrafo em maiúscula, e
+                outro em minúscula.</p>
+
+            <p id="text">Texto de Exemplo</p>
+            <button onclick="toUppercase()">Maiúscula</button>
+            <button onclick="toLowercase()">Minúscula</button>
+            <button onclick="closeModal('exercise8-modal')">Fechar</button>
+        </div>
+    </div>
+
+    <div id="exercise9-modal" class="modal">
+        <div class="modal-content">
+            <h2>Exercício 9</h2>
+            <p>Crie um formulário com os campos para cadastrar o usuário de um sistema (login, senha e confirmar senha).
+                Permita que a página seja submetida apenas se todos os campos estiverem preenchidos, se os campos senha
+                e confirma senha forem iguais e a senha possuir entre 6 e 10 caracteres.</p>
+
+            <form onsubmit="return validateForm()">
+                <label for="login">Login:</label>
+                <input type="text" id="login" required><br>
+
+                <label for="password">Senha:</label>
+                <input type="password" id="password" required><br>
+
+                <label for="confirmPassword">Confirmar Senha:</label>
+                <input type="password" id="confirmPassword" required><br>
+
+                <input type="submit" value="Cadastrar">
+            </form>
+            <button onclick="closeModal('exercise9-modal')">Fechar</button>
+        </div>
+    </div>
+
+    <div id="exercise10-modal" class="modal">
+        <div class="modal-content">
+            <h2>Exercício 10</h2>
+            <p>Crie um formulário de cadastro de cliente. O formulário deve conter os campos Nome (text), Pessoa
+                (Física/Jurídica — radio), CPF (text), CNPJ (text), data de nascimento, endereço (text), cep (text),
+                telefone (text), email. O formulário deve ativar o campo CPF apenas se o RadioButton de pessoa física
+                estiver ativo e o campo de CNPJ no caso de pessoa jurídica. O campo data de nascimento também só deve
+                estar ativo no caso de pessoa física ser sel ecionado e deve aceitar que somente números sejam
+                digitados. O campo CEP também só deve aceitar número.
+            </p>
+
+            <form>
+                <label for="name">Nome:</label>
+                <input type="text" id="name" required><br>
+
+                <label>Tipo de Pessoa:</label>
+                <input type="radio" name="personType" value="fisica" onclick="enableCPF()">Pessoa Física
+                <input type="radio" name="personType" value="juridica" onclick="enableCNPJ()">Pessoa Jurídica<br>
+
+                <label for="cpf" id="cpfLabel" style="display: none;">CPF:</label>
+                <input type="text" id="cpf" style="display: none;"><br>
+
+                <label for="cnpj" id="cnpjLabel" style="display: none;">CNPJ:</label>
+                <input type="text" id="cnpj" style="display: none;"><br>
+
+                <label for="dob" id="dobLabel" style="display: none;">Data de Nascimento:</label>
+                <input type="text" id="dob" style="display: none;"><br>
+
+                <label for="address">Endereço:</label>
+                <input type="text" id="address" required><br>
+
+                <label for="cep">CEP:</label>
+                <input type="text" id="cep" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required><br>
+
+                <label for="phone">Telefone:</label>
+                <input type="text" id="phone" required><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" required><br>
+
+                <input type="submit" value="Cadastrar">
+            </form>
+            <button onclick="closeModal('exercise10-modal')">Fechar</button>
+        </div>
+    </div>
+
+    <script>
+        const exerciseNav = document.getElementById("exercise-nav");
+
+        exerciseNav.addEventListener("click", function (event) {
+            if (event.target.tagName === "A") {
+                const exerciseId = event.target.getAttribute("data-exercise");
+                openModal(exerciseId);
+            }
+        });
+
+        function openModal(exerciseId) {
+            const modal = document.getElementById(exerciseId + "-modal");
+            modal.style.display = "block";
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.style.display = "none";
+        }
+
+        function changeBackgroundColor() {
+            var select = document.getElementById("selectColor");
+            var selectedColor = select.options[select.selectedIndex].value;
+            document.body.style.backgroundColor = selectedColor;
+        }
+
+        var paragraph = document.getElementById("paragraph");
+        function toggleText() {
+            if (paragraph.style.display === "none" || paragraph.style.display === "") {
+                paragraph.style.display = "block";
+            } else {
+                paragraph.style.display = "none";
+            }
+        }
+
+        function checkButton() {
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+            var submitButton = document.getElementById('submitButton');
+            if (checkboxes.length >= 2) {
+                submitButton.removeAttribute('disabled');
+            } else {
+                submitButton.setAttribute('disabled', 'true');
+            }
+        }
+
+        var text = document.getElementById("text");
+
+        function changeFontColor() {
+            text.style.color = (text.style.color === 'black') ? 'white' : 'black';
+        }
+
+        function changeBackgroundColor() {
+            text.style.backgroundColor = (text.style.backgroundColor === 'white') ? 'black' : 'white';
+        }
+
+        function changeFontColorBack() {
+            text.style.color = (text.style.color === 'white') ? 'black' : 'white';
+        }
+
+        function changeBackgroundColorBack() {
+            text.style.backgroundColor = (text.style.backgroundColor === 'black') ? 'white' : 'black';
+        }
+
+        var text = document.getElementById("text");
+
+        function increaseFontSize() {
+            var currentSize = window.getComputedStyle(text, null).getPropertyValue('font-size');
+            var newSize = (parseInt(currentSize) + 2) + 'px';
+            text.style.fontSize = newSize;
+        }
+
+        function decreaseFontSize() {
+            var currentSize = window.getComputedStyle(text, null).getPropertyValue('font-size');
+            var newSize = (parseInt(currentSize) - 2) + 'px';
+            text.style.fontSize = newSize;
+        }
+
+        var text = document.getElementById("text");
+
+        function toUppercase() {
+            text.textContent = text.textContent.toUpperCase();
+        }
+
+        function toLowercase() {
+            text.textContent = text.textContent.toLowerCase();
+        }
+
+        function validateForm() {
+            var login = document.getElementById("login").value;
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+
+            if (login === '' || password === '' || confirmPassword === '') {
+                alert("Preencha todos os campos.");
+                return false;
+            } else if (password !== confirmPassword) {
+                alert("A senha e a confirmação de senha não correspondem.");
+                return false;
+            } else if (password.length < 6 || password.length > 10) {
+                alert("A senha deve ter entre 6 e 10 caracteres.");
+                return false;
+            }
+            return true;
+        }
+
+        function enableCPF() {
+            document.getElementById("cpfLabel").style.display = "block";
+            document.getElementById("cpf").style.display = "block";
+            document.getElementById("cnpjLabel").style.display = "none";
+            document.getElementById("cnpj").style.display = "none";
+            document.getElementById("dobLabel").style.display = "block";
+            document.getElementById("dob").style.display = "block";
+        }
+
+        function enableCNPJ() {
+            document.getElementById("cpfLabel").style.display = "none";
+            document.getElementById("cpf").style.display = "none";
+            document.getElementById("cnpjLabel").style.display = "block";
+            document.getElementById("cnpj").style.display = "block";
+            document.getElementById("dobLabel").style.display = "none";
+            document.getElementById("dob").style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
