@@ -43,24 +43,6 @@ function checkButton() {
     }
 }
 
-function validateForm() {
-    var login = document.getElementById("login").value;
-    var password = document.getElementById("password").value;
-    var confirmPassword = document.getElementById("confirmPassword").value;
-
-    if (login === '' || password === '' || confirmPassword === '') {
-        alert("Preencha todos os campos.");
-        return false;
-    } else if (password !== confirmPassword) {
-        alert("A senha e a confirmação de senha não correspondem.");
-        return false;
-    } else if (password.length < 6 || password.length > 10) {
-        alert("A senha deve ter entre 6 e 10 caracteres.");
-        return false;
-    }
-    return true;
-}
-
 function enableCPF() {
     document.getElementById("cpfLabel").style.display = "block";
     document.getElementById("cpf").style.display = "block";
@@ -165,4 +147,34 @@ function toUppercase() {
 
 function toLowercase() {
     textUppercaseLowercase.textContent = textUppercaseLowercase.textContent.toLowerCase();
+}
+
+//exercício 9
+function validateForm() {
+    var login = document.getElementById("login").value;
+    var password = document.getElementById("password").value;
+    var confirmPassword = document.getElementById("confirmPassword").value;
+
+    if (login === '' || password === '' || confirmPassword === '') {
+        alert("Preencha todos os campos.");
+        return false;
+    } else if (password !== confirmPassword) {
+        alert("A senha e a confirmação de senha não correspondem.");
+        return false;
+    } else if (password.length < 6 || password.length > 10) {
+        alert("A senha deve ter entre 6 e 10 caracteres. Atualmente a senha tem: " + password.length + " elementos");
+        return false;
+    }
+
+    document.getElementById("login").value = '';
+    document.getElementById("password").value = '';
+    document.getElementById("confirmPassword").value = '';
+
+    alert("Usuário cadastrado com sucesso!");
+
+    setTimeout(function () {
+        closeModal('exercise9-modal');
+    }, 2000);
+
+    return false;
 }
