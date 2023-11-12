@@ -43,26 +43,6 @@ function checkButton() {
     }
 }
 
-var text = document.getElementById("text");
-
-function changeFontColor() {
-    text.style.color = (text.style.color === 'black') ? 'white' : 'black';
-}
-
-function changeBackgroundColor() {
-    text.style.backgroundColor = (text.style.backgroundColor === 'white') ? 'black' : 'white';
-}
-
-function changeFontColorBack() {
-    text.style.color = (text.style.color === 'white') ? 'black' : 'white';
-}
-
-function changeBackgroundColorBack() {
-    text.style.backgroundColor = (text.style.backgroundColor === 'black') ? 'white' : 'black';
-}
-
-var text = document.getElementById("text");
-
 function increaseFontSize() {
     var currentSize = window.getComputedStyle(text, null).getPropertyValue('font-size');
     var newSize = (parseInt(currentSize) + 2) + 'px';
@@ -127,7 +107,6 @@ const greenLink = document.getElementById('green-link');
 const blueLink = document.getElementById('blue-link');
 const yellowLink = document.getElementById('yellow-link');
 
-// Adiciona um evento de mouseover para cada link
 redLink.addEventListener('mouseover', function () {
     document.body.style.backgroundColor = 'red';
 });
@@ -144,26 +123,43 @@ yellowLink.addEventListener('mouseover', function () {
     document.body.style.backgroundColor = 'yellow';
 });
 
-// Adiciona um evento de mouseout para restaurar o fundo da página quando o mouse sai do link
 const allLinks = [redLink, greenLink, blueLink, yellowLink];
 
 allLinks.forEach(link => {
     link.addEventListener('mouseout', function () {
-        document.body.style.backgroundColor = ''; // Volta ao fundo padrão
+        document.body.style.backgroundColor = '';
     });
 });
 
 
 //exercício 3
-
 function changeBackgroundColor() {
     var select = document.getElementById("selectColor");
     var selectedColor = select.options[select.selectedIndex].value;
 
-    // Verifica se a opção selecionada não está em branco
     if (selectedColor !== "") {
         document.body.style.backgroundColor = selectedColor;
     } else {
-        document.body.style.backgroundColor = ''; // Volta ao fundo padrão
+        document.body.style.backgroundColor = '';
     }
+}
+
+//exercício 6
+
+var text = document.getElementById("text");
+
+function whiteFont() {
+    text.style.color = 'white';
+}
+
+function blackFont() {
+    text.style.color = 'black';
+}
+
+function whiteBackgroud() {
+    text.style.backgroundColor = 'white';
+}
+
+function blackBackgroud() {
+    text.style.backgroundColor = 'black';
 }
