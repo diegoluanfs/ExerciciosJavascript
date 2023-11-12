@@ -120,3 +120,35 @@ function enableCNPJ() {
     document.getElementById("dobLabel").style.display = "none";
     document.getElementById("dob").style.display = "none";
 }
+
+//exercício 2
+const redLink = document.getElementById('red-link');
+const greenLink = document.getElementById('green-link');
+const blueLink = document.getElementById('blue-link');
+const yellowLink = document.getElementById('yellow-link');
+
+// Adiciona um evento de mouseover para cada link
+redLink.addEventListener('mouseover', function () {
+    document.body.style.backgroundColor = 'red';
+});
+
+greenLink.addEventListener('mouseover', function () {
+    document.body.style.backgroundColor = 'green';
+});
+
+blueLink.addEventListener('mouseover', function () {
+    document.body.style.backgroundColor = 'blue';
+});
+
+yellowLink.addEventListener('mouseover', function () {
+    document.body.style.backgroundColor = 'yellow';
+});
+
+// Adiciona um evento de mouseout para restaurar o fundo da página quando o mouse sai do link
+const allLinks = [redLink, greenLink, blueLink, yellowLink];
+
+allLinks.forEach(link => {
+    link.addEventListener('mouseout', function () {
+        document.body.style.backgroundColor = ''; // Volta ao fundo padrão
+    });
+});

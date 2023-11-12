@@ -18,19 +18,3 @@
     width: 60%;
     max-width: 800px;
 }
-
-a:hover {
-    background-color: red;
-}
-
-a:hover+a {
-    background-color: green;
-}
-
-a:hover+a+a {
-    background-color: blue;
-}
-
-a:hover+a+a+a {
-    background-color: yellow;
-}
