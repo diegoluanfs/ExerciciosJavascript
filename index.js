@@ -43,14 +43,6 @@ function checkButton() {
     }
 }
 
-function toUppercase() {
-    text.textContent = text.textContent.toUpperCase();
-}
-
-function toLowercase() {
-    text.textContent = text.textContent.toLowerCase();
-}
-
 function validateForm() {
     var login = document.getElementById("login").value;
     var password = document.getElementById("password").value;
@@ -163,4 +155,14 @@ function decreaseFontSize() {
     var currentSize = window.getComputedStyle(decreaseIncreaseText, null).getPropertyValue('font-size');
     var newSize = (parseInt(currentSize) - 2) + 'px';
     decreaseIncreaseText.style.fontSize = newSize;
+}
+
+//exercício 8
+var textUppercaseLowercase = document.getElementById("textUppercaseLowercase");
+function toUppercase() {
+    textUppercaseLowercase.textContent = textUppercaseLowercase.textContent.toUpperCase();
+}
+
+function toLowercase() {
+    textUppercaseLowercase.textContent = textUppercaseLowercase.textContent.toLowerCase();
 }
