@@ -43,20 +43,6 @@ function checkButton() {
     }
 }
 
-function increaseFontSize() {
-    var currentSize = window.getComputedStyle(text, null).getPropertyValue('font-size');
-    var newSize = (parseInt(currentSize) + 2) + 'px';
-    text.style.fontSize = newSize;
-}
-
-function decreaseFontSize() {
-    var currentSize = window.getComputedStyle(text, null).getPropertyValue('font-size');
-    var newSize = (parseInt(currentSize) - 2) + 'px';
-    text.style.fontSize = newSize;
-}
-
-var text = document.getElementById("text");
-
 function toUppercase() {
     text.textContent = text.textContent.toUpperCase();
 }
@@ -162,4 +148,19 @@ function whiteBackgroud() {
 
 function blackBackgroud() {
     text.style.backgroundColor = 'black';
+}
+
+//exercício 7 
+var decreaseIncreaseText = document.getElementById("decreaseIncreaseText");
+
+function increaseFontSize() {
+    var currentSize = window.getComputedStyle(decreaseIncreaseText, null).getPropertyValue('font-size');
+    var newSize = (parseInt(currentSize) + 2) + 'px';
+    decreaseIncreaseText.style.fontSize = newSize;
+}
+
+function decreaseFontSize() {
+    var currentSize = window.getComputedStyle(decreaseIncreaseText, null).getPropertyValue('font-size');
+    var newSize = (parseInt(currentSize) - 2) + 'px';
+    decreaseIncreaseText.style.fontSize = newSize;
 }
