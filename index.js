@@ -152,3 +152,18 @@ allLinks.forEach(link => {
         document.body.style.backgroundColor = ''; // Volta ao fundo padrão
     });
 });
+
+
+//exercício 3
+
+function changeBackgroundColor() {
+    var select = document.getElementById("selectColor");
+    var selectedColor = select.options[select.selectedIndex].value;
+
+    // Verifica se a opção selecionada não está em branco
+    if (selectedColor !== "") {
+        document.body.style.backgroundColor = selectedColor;
+    } else {
+        document.body.style.backgroundColor = ''; // Volta ao fundo padrão
+    }
+}
