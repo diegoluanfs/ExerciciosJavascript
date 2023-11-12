@@ -43,24 +43,6 @@ function checkButton() {
     }
 }
 
-function enableCPF() {
-    document.getElementById("cpfLabel").style.display = "block";
-    document.getElementById("cpf").style.display = "block";
-    document.getElementById("cnpjLabel").style.display = "none";
-    document.getElementById("cnpj").style.display = "none";
-    document.getElementById("dobLabel").style.display = "block";
-    document.getElementById("dob").style.display = "block";
-}
-
-function enableCNPJ() {
-    document.getElementById("cpfLabel").style.display = "none";
-    document.getElementById("cpf").style.display = "none";
-    document.getElementById("cnpjLabel").style.display = "block";
-    document.getElementById("cnpj").style.display = "block";
-    document.getElementById("dobLabel").style.display = "none";
-    document.getElementById("dob").style.display = "none";
-}
-
 //exercício 2
 const redLink = document.getElementById('red-link');
 const greenLink = document.getElementById('green-link');
@@ -178,3 +160,24 @@ function validateForm() {
 
     return false;
 }
+
+//exercício 10
+
+function enableCPF() {
+    document.getElementById("cpfLabel").style.display = "block";
+    document.getElementById("cpf").style.display = "block";
+    document.getElementById("cnpjLabel").style.display = "none";
+    document.getElementById("cnpj").style.display = "none";
+    document.getElementById("dobLabel").style.display = "block";
+    document.getElementById("dob").style.display = "block";
+}
+
+function enableCNPJ() {
+    document.getElementById("cpfLabel").style.display = "none";
+    document.getElementById("cpf").style.display = "none";
+    document.getElementById("cnpjLabel").style.display = "block";
+    document.getElementById("cnpj").style.display = "block";
+    document.getElementById("dobLabel").style.display = "none";
+    document.getElementById("dob").style.display = "none";
+}
+
